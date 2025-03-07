@@ -1,7 +1,34 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://bbfqcjrd3fhxw"]
 
-[ext_resource path="res://Assets/Keanu.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://d0xi3jghkp5hk" path="res://assets/Keanu.png" id="1"]
+[ext_resource type="Script" path="res://scenes/restart_button.gd" id="2_vafxm"]
+[ext_resource type="Script" path="res://scenes/quit_button.gd" id="3_1wxy1"]
 
-[node name="WinScreen" type="Sprite2D"]
-position = Vector2( 512.329, 294.151 )
-texture = ExtResource( 1 )
+[node name="WinScreen" type="Node2D"]
+position = Vector2(512.329, 294.151)
+
+[node name="Node2D" type="Sprite2D" parent="."]
+position = Vector2(70.671, 23.849)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 6.67102
+offset_top = 66.849
+offset_right = 86.671
+offset_bottom = 97.849
+scale = Vector2(2, 2)
+text = "RESTART"
+script = ExtResource("2_vafxm")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 43.671
+offset_top = 146.849
+offset_right = 90.671
+offset_bottom = 177.849
+scale = Vector2(2, 2)
+text = "QUIT"
+script = ExtResource("3_1wxy1")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

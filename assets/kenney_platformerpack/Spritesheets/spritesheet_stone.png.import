@@ -9,7 +9,7 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/kenney_platformerpack/Spritesheets/spritesheet_stone.png"
+source_file="res://assets/kenney_platformerpack/Spritesheets/spritesheet_stone.png"
 dest_files=[ "res://.import/spritesheet_stone.png-c2003688fd12bc3892d69e894281f835.stex" ]
 
 [params]

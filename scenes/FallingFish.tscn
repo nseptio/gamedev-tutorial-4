@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://35367sy7siub"]
+
+[ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="1_685lj"]
+[ext_resource type="PackedScene" uid="uid://d1txcj2xm7mfy" path="res://scenes/AreaTrigger.tscn" id="3_e33qe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5nn1i"]
+radius = 42.0
+height = 106.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnwhf"]
+radius = 45.0
+height = 112.0
+
+[node name="FallingFish" type="RigidBody2D"]
+
+[node name="BlueFish" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("1_685lj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5nn1i")
+
+[node name="AreaTrigger" parent="." instance=ExtResource("3_e33qe")]
+
+[node name="CollisionShape2D" parent="AreaTrigger" index="0"]
+shape = SubResource("CapsuleShape2D_qnwhf")
+
+[editable path="AreaTrigger"]

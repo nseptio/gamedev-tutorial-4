@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ks06eh12pjc"]
+
+[ext_resource type="Texture2D" uid="uid://cp08l23yievm7" path="res://assets/kenney_platformerpack/PNG/Particles/fireball.png" id="1_wp0od"]
+[ext_resource type="PackedScene" uid="uid://d1txcj2xm7mfy" path="res://scenes/AreaTrigger.tscn" id="2_lemdy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5nn1i"]
+radius = 42.0
+height = 106.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnwhf"]
+radius = 45.0
+height = 112.0
+
+[node name="Fireball" type="RigidBody2D"]
+
+[node name="Fireball" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("1_wp0od")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5nn1i")
+
+[node name="AreaTrigger" parent="." instance=ExtResource("2_lemdy")]
+
+[node name="CollisionShape2D" parent="AreaTrigger" index="0"]
+shape = SubResource("CapsuleShape2D_qnwhf")
+
+[editable path="AreaTrigger"]
