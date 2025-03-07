@@ -65,16 +65,16 @@ tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAA
 tile_set = SubResource("TileSet_s0uun")
 
 [node name="AreaTrigger" parent="." instance=ExtResource("3_ixvtb")]
-position = Vector2(720, 920)
+position = Vector2(261, 872)
 scale = Vector2(150, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1547, 14)
+position = Vector2(1542, 13)
 texture = ExtResource("4_umtg2")
 
 [node name="AreaTrigger2" parent="Sprite2D" instance=ExtResource("3_ixvtb")]
-position = Vector2(-5, 0)
-scale = Vector2(14, 24)
+position = Vector2(-3, -9)
+scale = Vector2(20, 90)
 sceneName = "Level2"
 
 [node name="Spawner" type="Node2D" parent="."]
