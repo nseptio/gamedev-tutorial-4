@@ -9,7 +9,7 @@ func _on_Area_Trigger_body_entered(body):
 		if current_scene == scene_name:
 			Global.lives -= 1
 
-		if Global.lives == 0:
+		if Global.lives <= 0:
 			get_tree().call_deferred("change_scene_to_file", str("res://scenes/GameOver.tscn"))
 		else:
 			print("Global lives: ", Global.lives)
