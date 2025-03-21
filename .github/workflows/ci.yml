@@ -17,4 +17,6 @@ jobs:
         with:
           version: 4.3.0
       - run: gdformat --check scenes/
+      - run: gdformat --check scripts/
       - run: gdlint scenes/
+      - run: gdlint scripts/
