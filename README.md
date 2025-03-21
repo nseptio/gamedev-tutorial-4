@@ -1,31 +1,21 @@
-# [Game Development Tutorial 4](https://csui-game-development.github.io/tutorials/tutorial-4/)
+# [Game Development Tutorial 6](https://csui-game-development.github.io/tutorials/tutorial-6/)
 
-### Latihan Mandiri: Membuat Level Baru Dengan Tile Map & Obstacle Berbeda
-  **Langkah-langkah proses pembuatan level baru.**   
-1. Scene untuk level baru  
-   - Buat scene baru dengan root node tipe `Node2D`
-   - Tambahkan scene Player ke level baru tersebut
-2. Menambahkan Tilemap  
-   - Membuat TileMapLayer baru dengan asset Spritesheets yang berbeda dengan level sebelumnya
-   - Pasang spritesheet_gr_grass.png ke tileset
-   - Ubah ukuran tile menjadi 128x128
-   - Buat collision shape untuk tiap bentuk tile
-   - Gambar level dengan tileset baru
-3. Menambahkan Node untuk WinTrigger  
-   - Menambahkan Sprite dengan gambar flagblue2.png
-   - Menambahkan AreaTrigger dalam Sprite
-   - Scene name tujuan pada Area diganti menjadi WinScreen
-4. Menambahkan LoseTrigger  
-   - LoseTrigger ditambahkan di area bawah, ketika player jatuh ke bawah
-   - Spawner juga mempunyai LoseTrigger
-5. Menambahkan Spawner  
-   - Duplikasi scene `FallingFish` dengan nama `Fireball`
-   - Ganti Sprite dalam scene menjadi fireball.png
-   - Ganti nama scene menjadi `Fireball`
-   - Tambahkan scene `Fireball` ke dalam Spawner
-
-### Menambah Restart Button untuk Lose dan Win Screen
-1. Menambah child node `Button` pada scene LoseScreen dan WinScreen
-2. Menambah script `restart_button.gd` pada Button
-3. Menambah signal `pressed` pada Button
-4. Pada WinScreen, terdapat `Quit` button yang langsung keluar dari game
+## Latihan Mandiri: Fitur Tambahan
+1. Tombol pada layar game over untuk kembali ke menu utama.
+   1. Menambahkan child node `LinkButton` pada `GameOver.tscn`.
+   2. Attach script yang sama seperti pada `LinkButton` pada `MainMenu.tscn`.
+   3. Menambahkan signal `on_pressed` pada `LinkButton`
+   4. Ubah nilai variabel `scene_to_load` pada tab inspector menjadi `MainMenu`
+2. Fitur Select Stage 
+   1. Buat scene baru dengan nama `LevelSelect.tscn` dengan cara duplicate scene `MainMenu.tscn`.
+   2. Menambahkan child node `LinkButton` untuk level 1, level 2, dan tombol kembali ke menu utama.
+   3. Attach script yang sama seperti pada `LinkButton` pada `MainMenu.tscn` untuk tiap tombol.
+   4. Menambahkan signal `on_pressed` pada `LinkButton`.
+   5. Ubah nilai variabel `scene_to_load` pada tab inspector menjadi `Level1`, `Level2`, dan `MainMenu` sesuai dengan tombol terkait.
+3. Layar dan efek transisi antar level, dari level 1 ke level 2.
+   1. Buat scene baru dengan nama `Transition.tscn` dengan root node `CanvasLayer`.
+   2. Menambahkan child node `ColorRect` pada `Transition.tscn`.
+   3. Menambahkan child node `AnimationPlayer` pada `Transition.tscn`.
+   4. Membuat animasi `fade_in_out` pada `AnimationPlayer` selama 1 detik.
+   5. Membuat keyframe pada animasi `fade_in_out` dengan nilai visible `true` pada frame 0 dan visible `false` pada frame 1, nilai `modulate` pada frame 0 adalah 0 dan nilai `modulate` pada frame 1 adalah 1, dan 1 tambahan keyframe di tengah untuk transisi fade in dan fade out.
+   
