@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://yd083oqmypqt"]
+[gd_scene load_steps=10 format=4 uid="uid://yd083oqmypqt"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_t67kw"]
 [ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="2_r26e2"]
 [ext_resource type="Texture2D" uid="uid://b5dw8jdrd8wei" path="res://assets/kenney_platformerpack/PNG/Items/flagBlue2.png" id="3_jlegk"]
 [ext_resource type="PackedScene" uid="uid://d1txcj2xm7mfy" path="res://scenes/AreaTrigger.tscn" id="4_8vi46"]
-[ext_resource type="Script" path="res://scenes/spawner.gd" id="5_ucxpg"]
+[ext_resource type="Script" uid="uid://dmp3piflrb13k" path="res://scripts/spawner.gd" id="5_ucxpg"]
 [ext_resource type="PackedScene" uid="uid://ks06eh12pjc" path="res://scenes/Fireball.tscn" id="6_l6u04"]
+[ext_resource type="PackedScene" uid="uid://luqnaljbojxi" path="res://scenes/LifeCounter.tscn" id="7_qwp14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vskc"]
 texture = ExtResource("2_r26e2")
@@ -69,7 +70,7 @@ texture = ExtResource("3_jlegk")
 [node name="AreaTrigger2" parent="Sprite2D" instance=ExtResource("4_8vi46")]
 position = Vector2(-2, 4.76837e-07)
 scale = Vector2(9.5, 24)
-sceneName = "WinScreen"
+scene_name = "WinScreen"
 
 [node name="CollisionShape2D" parent="Sprite2D/AreaTrigger2" index="0"]
 position = Vector2(-0.725922, -0.0416665)
@@ -77,10 +78,17 @@ position = Vector2(-0.725922, -0.0416665)
 [node name="AreaTrigger" parent="." instance=ExtResource("4_8vi46")]
 position = Vector2(1676, 774)
 scale = Vector2(500, 10)
+scene_name = "Level2"
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(1841, -925)
 script = ExtResource("5_ucxpg")
 obstacle = ExtResource("6_l6u04")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("7_qwp14")]
+offset_right = 1.0
+offset_bottom = 23.0
 
 [editable path="Sprite2D/AreaTrigger2"]

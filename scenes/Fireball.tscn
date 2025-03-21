@@ -23,6 +23,7 @@ texture = ExtResource("1_wp0od")
 shape = SubResource("CapsuleShape2D_5nn1i")
 
 [node name="AreaTrigger" parent="." instance=ExtResource("2_lemdy")]
+scene_name = "Level2"
 
 [node name="CollisionShape2D" parent="AreaTrigger" index="0"]
 shape = SubResource("CapsuleShape2D_qnwhf")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://luqnaljbojxi"]
+
+[ext_resource type="Script" uid="uid://4c1brp88i2gf" path="res://scripts/total_life.gd" id="1_wysaa"]
+[ext_resource type="Theme" uid="uid://cisxuovug5sln" path="res://ui/main_theme.tres" id="1_ybyj6"]
+
+[node name="GUI" type="MarginContainer"]
+theme = ExtResource("1_ybyj6")
+
+[node name="TotalLife" type="Label" parent="."]
+layout_mode = 2
+script = ExtResource("1_wysaa")

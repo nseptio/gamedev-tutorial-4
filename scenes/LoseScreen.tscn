@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://vij5b21a6352"]
 
 [ext_resource type="Texture2D" uid="uid://bi5p7hlw4wlhv" path="res://assets/dead.jpg" id="1"]
-[ext_resource type="Script" path="res://scenes/restart_button.gd" id="2_mek3u"]
+[ext_resource type="Script" uid="uid://cxu5nhria756r" path="res://scripts/restart_button.gd" id="2_mek3u"]
 
 [node name="LoseScreen" type="Node2D"]
 

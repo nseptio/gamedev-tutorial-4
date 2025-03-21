@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbfqcjrd3fhxw"]
 
 [ext_resource type="Texture2D" uid="uid://d0xi3jghkp5hk" path="res://assets/Keanu.png" id="1"]
-[ext_resource type="Script" path="res://scenes/restart_button.gd" id="2_vafxm"]
-[ext_resource type="Script" path="res://scenes/quit_button.gd" id="3_1wxy1"]
+[ext_resource type="Script" uid="uid://cxu5nhria756r" path="res://scripts/restart_button.gd" id="2_vafxm"]
+[ext_resource type="Script" uid="uid://thc1870ivdht" path="res://scripts/quit_button.gd" id="3_1wxy1"]
 
 [node name="WinScreen" type="Node2D"]
 position = Vector2(512.329, 294.151)

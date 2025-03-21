@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3imevpmfo6w3"]
+
+[ext_resource type="Theme" uid="uid://cisxuovug5sln" path="res://ui/main_theme.tres" id="1_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://bj2aew56l2i28" path="res://assets/kenney_platformerpack/PNG/Players/128x256/Pink/alienPink_front.png" id="2_0ykhv"]
+[ext_resource type="Script" uid="uid://bsehouhmcgn84" path="res://scripts/new_game_button.gd" id="2_2wh52"]
+
+[node name="MainMenuContainer" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0ykhv")
+color = Color(0.207843, 0.160784, 0.470588, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "That Time I Got Reincarnated
+as an Alien"
+
+[node name="MainMenu" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "
+Main Menu"
+
+[node name="NewGameButton" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "New Game"
+script = ExtResource("2_2wh52")
+scene_to_load = "Level1"
+
+[node name="SelectLevelButton" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Select Level"
+script = ExtResource("2_2wh52")
+scene_to_load = "LevelSelect"
+
+[node name="Alien" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_0ykhv")
+stretch_mode = 2
+
+[node name="AlienFlip" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_0ykhv")
+stretch_mode = 2
+flip_v = true
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/NewGameButton" to="HBoxContainer/VBoxContainer/NewGameButton" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/SelectLevelButton" to="HBoxContainer/VBoxContainer/SelectLevelButton" method="_on_pressed"]

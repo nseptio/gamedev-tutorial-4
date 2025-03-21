@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://d27e5o6rj88o0"]
+
+[ext_resource type="Theme" uid="uid://cisxuovug5sln" path="res://ui/main_theme.tres" id="1_6bcno"]
+[ext_resource type="Script" uid="uid://bsehouhmcgn84" path="res://scripts/new_game_button.gd" id="2_qae0b"]
+
+[node name="GameOver" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6bcno")
+color = Color(0.6, 0.0784314, 0.192157, 1)
+
+[node name="GameOverLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 200.0
+offset_right = 933.0
+offset_bottom = 335.0
+theme_override_font_sizes/font_size = 144
+text = "GAME OVER"
+
+[node name="MainMenuButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 362.0
+offset_right = 693.0
+offset_bottom = 415.0
+theme_override_font_sizes/font_size = 48
+text = "Main Menu"
+script = ExtResource("2_qae0b")
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_pressed"]

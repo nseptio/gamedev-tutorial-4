@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Tutorial 4 Template"
-run/main_scene="res://scenes/Level1.tscn"
-config/features=PackedStringArray("4.3")
+run/main_scene="uid://c3imevpmfo6w3"
+config/features=PackedStringArray("4.4")
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+Transition="*res://scenes/Transition.tscn"
 
 [input]
 
